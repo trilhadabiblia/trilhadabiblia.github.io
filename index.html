@@ -3,30 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livros Históricos da Bíblia - Ministério Infantil</title>
+  <title>Trilho Kids - Ministério Infantil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .menu-open {
-      transform: translateX(0);
-    }
-    
-    .menu-closed {
-      transform: translateX(-100%);
-    }
-    
-    .overlay-show {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .overlay-hide {
-      opacity: 0;
-      visibility: hidden;
-    }
+    .menu-open { transform: translateX(0); }
+    .menu-closed { transform: translateX(-100%); }
+    .overlay-show { opacity: 1; visibility: visible; }
+    .overlay-hide { opacity: 0; visibility: hidden; }
   </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
-
   <!-- Menu Hamburger -->
   <button onclick="toggleMenu()" class="fixed top-6 left-6 z-50 bg-gradient-to-r from-purple-600 to-violet-600 p-3 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg">
     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,19 +20,13 @@
     </svg>
   </button>
 
-  <!-- Overlay -->
   <div id="overlay" class="overlay-hide fixed inset-0 bg-black/50 z-30 transition-all duration-300" onclick="toggleMenu()"></div>
 
-  <!-- Sidebar Menu -->
   <aside id="sidebar" class="menu-closed fixed left-0 top-0 h-screen w-80 bg-gradient-to-b from-slate-800 to-slate-900 border-r border-purple-500/30 z-40 transition-transform duration-300 overflow-y-auto">
     <div class="p-6">
       <h2 class="text-2xl font-black text-purple-300 mb-8">📖 LIVROS DA BÍBLIA</h2>
-      
-      <!-- Antigo Testamento -->
       <div class="mb-6">
-        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
-          <span>📜</span> Antigo Testamento
-        </h3>
+        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2"><span>📜</span> Antigo Testamento</h3>
         <div class="space-y-2 pl-4">
           <a href="./pentateuco.html" class="block text-gray-300 hover:text-purple-300 transition">🔤 Pentateuco</a>
           <a href="./historicos.html" class="block text-gray-300 hover:text-purple-300 transition">⚖️ Históricos</a>
@@ -55,12 +35,8 @@
           <a href="./profetasmenores.html" class="block text-gray-300 hover:text-purple-300 transition">🔔 Profetas Menores</a>
         </div>
       </div>
-
-      <!-- Novo Testamento -->
       <div class="mb-6 border-t border-purple-500/30 pt-6">
-        <h3 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2">
-          <span>✨</span> Novo Testamento
-        </h3>
+        <h3 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2"><span>✨</span> Novo Testamento</h3>
         <div class="space-y-2 pl-4">
           <a href="#" class="block text-gray-300 hover:text-purple-300 transition">😇 Evangelhos</a>
           <a href="#" class="block text-gray-300 hover:text-purple-300 transition">🚀 Histórico (Atos)</a>
@@ -77,176 +53,195 @@
     <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
       <div class="flex items-center justify-between">
         <div class="hidden md:block">
-          <h1 class="text-4xl font-black text-white drop-shadow-lg">
-            📚 TRILHA HISTÓRICA DA BÍBLIA
-          </h1>
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">🌟 TRILHO KIDS</h1>
         </div>
         <div class="md:hidden">
-          <h1 class="text-2xl font-black text-white drop-shadow-lg">
-            📚 Trilha Bíblica
-          </h1>
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">🌟 Trilho Kids</h1>
         </div>
-        <p class="text-purple-100 text-sm md:text-base">Ministério Infantil - Kids</p>
+        <p class="text-purple-100 text-sm md:text-base">Ministério Infantil</p>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-12">
     
     <!-- Hero Section -->
     <section class="text-center mb-16">
       <h2 class="text-3xl md:text-5xl font-black text-white mb-4">
-        ✨ Bem-vindo à Trilha Histórica da Bíblia! ✨
+        ✨ Bem-vindo ao Trilho Kids! ✨
       </h2>
-      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-        Explore os livros históricos e descubra histórias de fé, coragem e sabedoria que transformaram gerações!
+      <p class="text-xl text-yellow-300 font-semibold max-w-3xl mx-auto mb-8">
+        Uma jornada de fé, coragem e sabedoria para crianças que querem descobrir a Bíblia de forma divertida e envolvente.
       </p>
     </section>
 
-    <!-- Cards Principais -->
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      
-      <!-- Card 1: Juízes -->
-      <div class="group cursor-pointer" onclick="irPara('./juizes/herois.html')">
-        <div class="bg-gradient-to-br from-purple-800 to-slate-800 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/20 hover:shadow-2xl hover:scale-105">
-          <div class="bg-gradient-to-r from-purple-600 to-red-600 p-8 text-center">
-            <div class="text-6xl mb-4">⚖️</div>
-            <h3 class="text-3xl font-black text-white mb-2">JUÍZES</h3>
-            <p class="text-purple-100 font-semibold">Heróis da Fé</p>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-300 mb-4">Conheça 14 líderes corajosos que Deus levantou para proteger seu povo!</p>
-            <div class="text-sm text-purple-300 font-bold hover:text-purple-200">
-              Ver Heróis → 
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Quiz Bíblico -->
-      <div class="group cursor-pointer opacity-75 hover:opacity-100 transition-opacity" onclick="irPara('./quiz.html')">
-        <div class="bg-gradient-to-br from-blue-800 to-slate-800 rounded-2xl border-2 border-blue-500/30 hover:border-blue-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-2xl hover:scale-105">
-          <div class="bg-gradient-to-r from-blue-600 to-cyan-600 p-8 text-center">
-            <div class="text-6xl mb-4">🎯</div>
-            <h3 class="text-3xl font-black text-white mb-2">QUIZ BÍBLICO</h3>
-            <p class="text-blue-100 font-semibold">Teste seu Conhecimento! 🚀</p>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-400 mb-4">Teste seus conhecimentos sobre as histórias bíblicas! Respostas corretas ganham pontos.</p>
-            <div class="text-sm text-blue-400 font-bold">
-              Ir para o Quiz → 
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: Jogos Bíblicos -->
-      <div class="group cursor-pointer opacity-75 hover:opacity-100 transition-opacity">
-        <div class="bg-gradient-to-br from-green-800 to-slate-800 rounded-2xl border-2 border-green-500/30 hover:border-green-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-green-500/20 hover:shadow-2xl hover:scale-105">
-          <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 text-center">
-            <div class="text-6xl mb-4">🎮</div>
-            <h3 class="text-3xl font-black text-white mb-2">JOGOS BÍBLICOS</h3>
-            <p class="text-green-100 font-semibold">Em Breve! 🚀</p>
-          </div>
-          <div class="p-6">
-            <p class="text-gray-400 mb-4">Jogos divertidos para aprender sobre a Bíblia de forma interativa!</p>
-            <div class="text-sm text-green-400 font-bold">
-              Em Desenvolvimento...
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seção de Livros Históricos -->
-    <section class="mb-16">
+    <!-- Manifesto -->
+    <section class="mb-16 bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12 shadow-2xl">
       <div class="text-center mb-8">
-        <h2 class="text-3xl font-black text-purple-300 mb-2">📖 Livros Históricos</h2>
-        <p class="text-gray-400">Explore as histórias incríveis dos primeiros livros bíblicos</p>
+        <h2 class="text-3xl md:text-4xl font-black text-yellow-300 mb-4">🌟 Manifesto Trilho Kids</h2>
       </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- Josué -->
-        <div class="group cursor-pointer" onclick="irPara('./josue/josue.html')">
-          <div class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
-            <div class="text-4xl mb-3">📘</div>
-            <h3 class="font-bold text-white mb-2">Josué</h3>
-            <p class="text-sm text-blue-100">Um Líder Corajoso</p>
+      
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <!-- Versículo 1 -->
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-yellow-500/20">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl flex-shrink-0">📖</div>
+            <div>
+              <p class="text-gray-200 text-lg leading-relaxed mb-4">
+                Inspirados por <span class="font-bold text-yellow-300">Provérbios 22:6</span> — <em>"Instrua a criança segundo o caminho que ela deve seguir, e, mesmo quando envelhecer, não se desviará dele"</em> —, nosso objetivo é <span class="font-bold text-yellow-300">plantar sementes de fé</span> que durem para toda a vida.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Juízes -->
-        <div class="group cursor-pointer" onclick="irPara('./juizes/juizes.html')">
-          <div class="bg-gradient-to-br from-purple-600 to-red-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
-            <div class="text-4xl mb-3">⚖️</div>
-            <h3 class="font-bold text-white mb-2">Juízes</h3>
-            <p class="text-sm text-purple-100">Heróis da Fé</p>
+        <!-- Versículo 2 -->
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-yellow-500/20">
+          <div class="flex items-start gap-4">
+            <div class="text-4xl flex-shrink-0">🌱</div>
+            <div>
+              <p class="text-gray-200 text-lg leading-relaxed mb-4">
+                Seguindo o exemplo de <span class="font-bold text-yellow-300">Lucas 2:52</span> — <em>"Jesus ia crescendo em sabedoria, estatura e graça diante de Deus e dos homens"</em> —, ajudamos as crianças a <span class="font-bold text-yellow-300">crescerem em conhecimento, caráter e graça</span>, construindo uma base sólida para o futuro.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Rute -->
-        <div class="group cursor-pointer" onclick="irPara('./rute/rute.html')">
-          <div class="bg-gradient-to-br from-amber-600 to-yellow-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
-            <div class="text-4xl mb-3">🌾</div>
-            <h3 class="font-bold text-white mb-2">Rute</h3>
-            <p class="text-sm text-amber-100">Fidelidade e Amizade</p>
-          </div>
-        </div>
-
-        <!-- 1 Samuel -->
-        <div class="group cursor-pointer" onclick="irPara('./1samuel/1samuel.html')">
-          <div class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
-            <div class="text-4xl mb-3">👑</div>
-            <h3 class="font-bold text-white mb-2">1 Samuel</h3>
-            <p class="text-sm text-red-100">Ouvindo a Voz de Deus</p>
+        <!-- Propósito -->
+        <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur rounded-2xl p-8 border-2 border-purple-400/30">
+          <div class="text-center">
+            <div class="text-5xl mb-4">✨</div>
+            <p class="text-white text-xl font-semibold leading-relaxed">
+              No <span class="text-yellow-300 font-black">Trilho Kids</span>, cada história, cada desenho e cada atividade é um passo na trilha de Deus, transformando <span class="text-yellow-300">aprendizado em aventura</span> e <span class="text-yellow-300">fé em alegria</span>.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Seção Informativa -->
-    <section class="bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-8 mb-16">
-      <h2 class="text-2xl font-black text-purple-300 mb-4">🎓 Como Usar Esta Trilha?</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="flex gap-4">
-          <div class="text-3xl flex-shrink-0">📚</div>
-          <div>
-            <h3 class="font-bold text-white mb-2">Leia as Histórias</h3>
-            <p class="text-gray-300 text-sm">Explore cada livro histórico e aprenda sobre os personagens principais.</p>
+    <!-- Cards de Ação -->
+    <section class="mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-black text-purple-300 mb-2">🎯 Comece Sua Jornada!</h2>
+        <p class="text-gray-400">Escolha como você quer explorar a Palavra de Deus</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        
+        <!-- Meu Progresso -->
+        <div class="group cursor-pointer" onclick="irPara('./progresso.html')">
+          <div class="bg-gradient-to-br from-yellow-800 to-slate-800 rounded-2xl border-2 border-yellow-500/30 hover:border-yellow-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-yellow-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-yellow-600 to-amber-600 p-8 text-center">
+              <div class="text-6xl mb-4">🏆</div>
+              <h3 class="text-3xl font-black text-white mb-2">MEU PROGRESSO</h3>
+              <p class="text-yellow-100 font-semibold">Acompanhe sua jornada</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">Veja seus pontos, badges e conquistas!</p>
+              <div class="text-sm text-yellow-300 font-bold hover:text-yellow-200">
+                Ver Dashboard → 
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex gap-4">
-          <div class="text-3xl flex-shrink-0">🎯</div>
-          <div>
-            <h3 class="font-bold text-white mb-2">Teste Seus Conhecimentos</h3>
-            <p class="text-gray-300 text-sm">Responda perguntas e desafios sobre as histórias que aprendeu.</p>
+        
+        <!-- Explorar Livros -->
+        <div class="group cursor-pointer" onclick="toggleMenu()">
+          <div class="bg-gradient-to-br from-amber-800 to-slate-800 rounded-2xl border-2 border-amber-500/30 hover:border-amber-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-amber-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-8 text-center">
+              <div class="text-6xl mb-4">📚</div>
+              <h3 class="text-3xl font-black text-white mb-2">EXPLORAR LIVROS</h3>
+              <p class="text-amber-100 font-semibold">Antigo e Novo Testamento</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">Navegue por todos os livros da Bíblia!</p>
+              <div class="text-sm text-amber-300 font-bold hover:text-amber-200">
+                Abrir Menu → 
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex gap-4">
-          <div class="text-3xl flex-shrink-0">🏆</div>
-          <div>
-            <h3 class="font-bold text-white mb-2">Ganhe Prêmios</h3>
-            <p class="text-gray-300 text-sm">Acumule pontos e desbloqueie conquistas enquanto aprende!</p>
+
+        <!-- Heróis da Fé -->
+        <div class="group cursor-pointer" onclick="irPara('./juizes/herois.html')">
+          <div class="bg-gradient-to-br from-purple-800 to-slate-800 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-purple-600 to-red-600 p-8 text-center">
+              <div class="text-6xl mb-4">⚔️</div>
+              <h3 class="text-3xl font-black text-white mb-2">HERÓIS DA FÉ</h3>
+              <p class="text-purple-100 font-semibold">Juízes de Israel</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">Conheça 14 líderes corajosos que Deus levantou para proteger seu povo!</p>
+              <div class="text-sm text-purple-300 font-bold hover:text-purple-200">
+                Ver Heróis → 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Bíblico -->
+        <div class="group cursor-pointer" onclick="irPara('./quiz.html')">
+          <div class="bg-gradient-to-br from-blue-800 to-slate-800 rounded-2xl border-2 border-blue-500/30 hover:border-blue-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-blue-600 to-cyan-600 p-8 text-center">
+              <div class="text-6xl mb-4">🎯</div>
+              <h3 class="text-3xl font-black text-white mb-2">QUIZ BÍBLICO</h3>
+              <p class="text-blue-100 font-semibold">Teste seus conhecimentos</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">Responda perguntas sobre as histórias bíblicas e aprenda brincando!</p>
+              <div class="text-sm text-blue-300 font-bold hover:text-blue-200">
+                Começar Quiz → 
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-8 mb-16">
+      <h2 class="text-2xl font-black text-purple-300 mb-6 text-center">🎓 Como Funciona o Trilho Kids?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-5xl mb-4">📖</div>
+          <h3 class="font-bold text-white mb-3 text-xl">1. Leia</h3>
+          <p class="text-gray-300">Explore os livros da Bíblia com ilustrações coloridas e explicações simples.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl mb-4">🎯</div>
+          <h3 class="font-bold text-white mb-3 text-xl">2. Aprenda</h3>
+          <p class="text-gray-300">Descubra lições de fé, coragem e sabedoria através das histórias bíblicas.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl mb-4">🎮</div>
+          <h3 class="font-bold text-white mb-3 text-xl">3. Pratique</h3>
+          <p class="text-gray-300">Responda quizzes e participe de atividades para fixar o aprendizado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section class="text-center bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/40 rounded-3xl p-12">
+      <div class="text-6xl mb-6">🌟</div>
+      <h2 class="text-4xl font-black text-white mb-4">Pronto para a Aventura?</h2>
+      <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+        Clique no menu ao lado para começar a explorar os livros da Bíblia e descobrir histórias incríveis!
+      </p>
+      <button onclick="toggleMenu()" class="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-10 py-4 rounded-full font-black text-xl transition-all hover:scale-105 shadow-lg">
+        🚀 Começar Agora!
+      </button>
     </section>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
-    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
-    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Ministério Infantil | Desenvolvido com ❤️ para crianças</p>
   </footer>
 
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
-      
       sidebar.classList.toggle('menu-open');
       sidebar.classList.toggle('menu-closed');
       overlay.classList.toggle('overlay-show');
@@ -268,7 +263,6 @@
     window.addEventListener('resize', () => {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
-      
       if (window.innerWidth >= 768) {
         sidebar.classList.remove('menu-open');
         sidebar.classList.add('menu-closed');
@@ -277,6 +271,7 @@
       }
     });
   </script>
+  <script src="./gamificacao.js"></script>
 
 </body>
 </html>

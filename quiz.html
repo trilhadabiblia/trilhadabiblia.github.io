@@ -121,6 +121,7 @@
     <p class="text-sm">Ministério Infantil - Kids | Quiz Flashcard 🎯</p>
   </footer>
 
+  <script src="./gamificacao.js"></script>
   <script>
     const cartas = {
       josue: [
@@ -200,6 +201,8 @@
     let livroAtual = null;
     let cartaAtual = 0;
     let cartaVirada = false;
+    let acertos = 0;
+    let cartasRespondidas = new Set();
 
     const nomes = {
       josue: "📘 Livro de Josué",
@@ -219,6 +222,8 @@
       livroAtual = livro;
       cartaAtual = 0;
       cartaVirada = false;
+      acertos = 0;
+      cartasRespondidas = new Set();
       
       // Remove seleção anterior
       document.querySelectorAll('[id^="btn-"]').forEach(btn => {
@@ -267,10 +272,98 @@
       const card = document.getElementById('card');
       card.classList.toggle('flipped');
       cartaVirada = !cartaVirada;
+      
+      // Se virou para ver a resposta e ainda não respondeu esta carta
+      if (cartaVirada && !cartasRespondidas.has(cartaAtual)) {
+        // Mostrar botões de acerto/erro
+        mostrarBotoesResposta();
+      }
+    }
+
+    function mostrarBotoesResposta() {
+      if (document.getElementById('btns-resposta')) return; // Já existe
+      
+      const container = document.querySelector('.flex.justify-center.gap-4.mb-8');
+      const btnsDiv = document.createElement('div');
+      btnsDiv.id = 'btns-resposta';
+      btnsDiv.className = 'flex justify-center gap-4 mt-4';
+      btnsDiv.innerHTML = `
+        <button onclick="registrarResposta(true)" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+          ✅ Acertei!
+        </button>
+        <button onclick="registrarResposta(false)" class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+          ❌ Errei
+        </button>
+      `;
+      container.parentNode.insertBefore(btnsDiv, container.nextSibling);
+    }
+
+    function registrarResposta(acertou) {
+      if (cartasRespondidas.has(cartaAtual)) return;
+      
+      cartasRespondidas.add(cartaAtual);
+      if (acertou) acertos++;
+      
+      // Remover botões
+      const btns = document.getElementById('btns-resposta');
+      if (btns) btns.remove();
+      
+      // Se respondeu todas as cartas do livro
+      const cartasDoLivro = cartas[livroAtual];
+      if (cartasRespondidas.size === cartasDoLivro.length) {
+        finalizarQuiz();
+      } else {
+        // Avançar para próxima carta automaticamente
+        setTimeout(() => {
+          if (cartaAtual < cartasDoLivro.length - 1) {
+            cartaProxima();
+          }
+        }, 500);
+      }
+    }
+
+    function finalizarQuiz() {
+      const cartasDoLivro = cartas[livroAtual];
+      const total = cartasDoLivro.length;
+      
+      // Registrar no sistema de gamificação
+      trilhoGame.completarQuiz(`Quiz ${nomes[livroAtual]}`, acertos, total);
+      
+      // Mostrar resultado final
+      setTimeout(() => {
+        const percentual = Math.round((acertos / total) * 100);
+        let mensagem = '';
+        let emoji = '';
+        
+        if (percentual === 100) {
+          mensagem = 'PERFEITO! Você dominou este livro! 🏆';
+          emoji = '🎉';
+        } else if (percentual >= 75) {
+          mensagem = 'Muito bem! Continue assim! 👏';
+          emoji = '😊';
+        } else if (percentual >= 50) {
+          mensagem = 'Bom trabalho! Pode melhorar! 💪';
+          emoji = '🙂';
+        } else {
+          mensagem = 'Continue estudando! Você consegue! 📚';
+          emoji = '😅';
+        }
+        
+        alert(`${emoji}\n\n${mensagem}\n\nAcertos: ${acertos}/${total} (${percentual}%)\n\nSeus pontos foram registrados!`);
+        
+        // Reset para refazer o quiz
+        acertos = 0;
+        cartasRespondidas = new Set();
+        cartaAtual = 0;
+        atualizarCarta();
+      }, 500);
     }
 
     function cartaProxima() {
       if (!livroAtual) return;
+      const btns = document.getElementById('btns-resposta');
+      if (btns) btns.remove();
+      
       if (cartaAtual < cartas[livroAtual].length - 1) {
         cartaAtual++;
         atualizarCarta();
@@ -279,6 +372,9 @@
 
     function cartaAnterior() {
       if (!livroAtual) return;
+      const btns = document.getElementById('btns-resposta');
+      if (btns) btns.remove();
+      
       if (cartaAtual > 0) {
         cartaAtual--;
         atualizarCarta();

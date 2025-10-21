@@ -55,7 +55,7 @@
 			{
 				id: 1,
 				nome: "Otniel",
-				img: "juizes/otniel.png",
+				img: "otniel.png",
 				tribo: "Judá",
 				funcao: "Juiz de Israel",
 				periodo: "40 anos",
@@ -70,7 +70,7 @@
 			{
 				id: 2,
 				nome: "Eúde",
-				img: "juizes/eude.png",
+				img: "eude.png",
 				tribo: "Benjamim",
 				funcao: "Juiz de Israel",
 				periodo: "80 anos",
@@ -85,7 +85,7 @@
 			{
 				id: 3,
 				nome: "Sangar",
-				img: "juizes/sangar.png",
+				img: "sangar.png",
 				tribo: "Israel",
 				funcao: "Juiz de Israel",
 				periodo: "Indefinido",
@@ -100,7 +100,7 @@
 			{
 				id: 4,
 				nome: "Débora",
-				img: "juizes/debora.png",
+				img: "debora.png",
 				tribo: "Efraim",
 				funcao: "Profetisa e Juíza",
 				periodo: "40 anos",
@@ -115,7 +115,7 @@
 			{
 				id: 5,
 				nome: "Gideão",
-				img: "juizes/gideao.png",
+				img: "gideao.png",
 				tribo: "Manassés",
 				funcao: "Juiz de Israel",
 				periodo: "40 anos",
@@ -130,7 +130,7 @@
 			{
 				id: 6,
 				nome: "Tola",
-				img: "juizes/tola.png",
+				img: "tola.png",
 				tribo: "Issacar",
 				funcao: "Juiz de Israel",
 				periodo: "23 anos",
@@ -145,7 +145,7 @@
 			{
 				id: 7,
 				nome: "Jair",
-				img: "juizes/jair.png",
+				img: "jair.png",
 				tribo: "Gileade",
 				funcao: "Juiz de Israel",
 				periodo: "22 anos",
@@ -160,7 +160,7 @@
 			{
 				id: 8,
 				nome: "Jefté",
-				img: "juizes/jefte.png",
+				img: "jefte.png",
 				tribo: "Gileade",
 				funcao: "Juiz e guerreiro",
 				periodo: "6 anos",
@@ -175,7 +175,7 @@
 			{
 				id: 9,
 				nome: "Ibsã",
-				img: "juizes/ibsa.png",
+				img: "ibsa.png",
 				tribo: "Belém (Judá)",
 				funcao: "Juiz de Israel",
 				periodo: "7 anos",
@@ -190,7 +190,7 @@
 			{
 				id: 10,
 				nome: "Elom",
-				img: "juizes/elom.png",
+				img: "elom.png",
 				tribo: "Zebulom",
 				funcao: "Juiz de Israel",
 				periodo: "10 anos",
@@ -205,7 +205,7 @@
 			{
 				id: 11,
 				nome: "Abdom",
-				img: "juizes/abdom.png",
+				img: "abdom.png",
 				tribo: "Efraim",
 				funcao: "Juiz de Israel",
 				periodo: "8 anos",
@@ -220,7 +220,7 @@
 			{
 				id: 12,
 				nome: "Sansão",
-				img: "juizes/sansao.png",
+				img: "sansao.png",
 				tribo: "Dã",
 				funcao: "Juiz e guerreiro libertador",
 				periodo: "20 anos",
@@ -235,7 +235,7 @@
 			{
 				id: 13,
 				nome: "Eli",
-				img: "juizes/eli.png",
+				img: "eli.png",
 				tribo: "Levi",
 				funcao: "Juiz e Sacerdote",
 				periodo: "40 anos",
@@ -250,7 +250,7 @@
 			{
 				id: 14,
 				nome: "Samuel",
-				img: "juizes/samuel.png",
+				img: "samuel.png",
 				tribo: "Efraim",
 				funcao: "Último juiz e profeta",
 				periodo: "Indefinido",
@@ -277,7 +277,7 @@
                     src="${heroi.img}" 
                     alt="${heroi.nome}"
                     class="w-full h-full object-contain p-2"
-                    onerror="this.style.display='none'"
+                    
                   />
                 </div>
                 <div>
@@ -364,6 +364,7 @@
 			document.getElementById('modal-imagem').classList.remove('hidden');
 			document.getElementById('modal-imagem-src').src = src;
 			document.getElementById('modal-titulo').textContent = nome;
+			trilhoGame.visitarHeroi(nome);
 		}
 
 		function fecharModal() {
@@ -383,6 +384,7 @@
 	</script>
 
 	<script src="/menu.js"></script>
+	<script src="../gamificacao.js"></script>
 
 </body>
 
